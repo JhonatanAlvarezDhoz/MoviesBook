@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trending_movies/config/constants/environment.dart';
 
 class HomeScreen extends StatelessWidget {
   // name of page for goRouter
@@ -7,8 +8,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Placeholder(),
+    return Scaffold(
+      body: Center(
+        child: Text(Environment.apiKeyTMDB),
+      ),
     );
   }
 }
