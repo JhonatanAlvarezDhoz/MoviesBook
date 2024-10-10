@@ -3,6 +3,7 @@ import 'package:trending_movies/config/constants/environment.dart';
 import 'package:trending_movies/domain/datasource/movies_datasource.dart';
 import 'package:trending_movies/domain/entities/movie.dart';
 import 'package:trending_movies/infrastructure/mappers/movie_mapper.dart';
+import 'package:trending_movies/infrastructure/models/movie_details_models.dart';
 import 'package:trending_movies/infrastructure/models/moviedb_response.dart';
 
 class MovieDbDatasource extends MoviesDatasource {
@@ -51,6 +52,34 @@ class MovieDbDatasource extends MoviesDatasource {
   Future<List<Movie>> getUpcomingMovie({int page = 1}) async {
     final response =
         await dio.get('/movie/upcoming', queryParameters: {'page': page});
+    return _jsonToMovies(response.data);
+  }
+
+  @override
+  Future<Movie> getMovieById({String? movieId}) async {
+    final response = await dio.get('/movie/$movieId');
+
+    if (response.statusCode != 200) {
+      throw Exception("Movie whit id: $movieId not found");
+    }
+    final movieDbDetails = MovieDbDetails.fromJson(response.data);
+
+    final movie = MovieMapper.movieDbDetailsToEntity(movieDbDetails);
+
+    return movie;
+  }
+
+  @override
+  Future<List<Movie>> searchMovies({String? query}) async {
+    final response = await dio.get(
+      '/search/movie',
+      queryParameters: {"query": query},
+    );
+
+    if (response.statusCode != 200) {
+      throw Exception("Movie whit id: $query found");
+    }
+
     return _jsonToMovies(response.data);
   }
 }

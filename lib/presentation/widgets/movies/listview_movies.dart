@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:trending_movies/config/helpers/format_number.dart';
 import 'package:trending_movies/domain/entities/movie.dart';
 
@@ -95,7 +96,9 @@ class _MovieCard extends StatelessWidget {
                     return const DecoratedBox(
                         decoration: BoxDecoration(color: Colors.black12));
                   }
-                  return FadeIn(child: child);
+                  return GestureDetector(
+                      onTap: () => context.push('/movie/${movie.id}'),
+                      child: FadeIn(child: child));
                 },
               ),
             ),

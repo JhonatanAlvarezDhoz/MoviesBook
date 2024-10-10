@@ -8,4 +8,8 @@ abstract class MoviesRepository {
   Future<List<Movie>> getUpcomingMovie({int page = 1});
 
   Future<List<Movie>> getTopRatedMovie({int page = 1});
+
+  Future<Movie> getMovieById({String movieId});
+
+  Future<List<Movie>> searchMovies({String query});
 }
