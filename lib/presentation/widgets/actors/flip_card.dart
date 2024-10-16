@@ -70,7 +70,7 @@ class _FlipCardState extends ConsumerState<FlipCard>
               children: [
                 Transform(
                   transform: Matrix4.identity()
-                    ..setEntry(3, 2, 0.001) // Esto agrega el efecto 3D
+                    ..setEntry(3, 2, 0.001)
                     ..rotateY(angle),
                   alignment: Alignment.center,
                   child: isShowingFront

@@ -1,13 +1,13 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:trending_movies/presentation/delegates/search_movie_delegate.dart';
+import 'package:trending_movies/presentation/providers/providers.dart';
 
-class CustomAppBar extends StatelessWidget {
+class CustomAppBar extends ConsumerWidget {
   const CustomAppBar({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SafeArea(
         bottom: false,
         child: LayoutBuilder(builder: (context, BoxConstraints constraints) {
@@ -26,15 +26,14 @@ class CustomAppBar extends StatelessWidget {
                     width: 260,
                     child: Image.asset("assets/images/title.png")),
                 const Spacer(),
-                // IconButton(
-                //   onPressed: () {},
-                //   icon: const Icon(Icons.search),
-                // )
                 GestureDetector(
                     onTap: () {
-                      log("Search");
+                      final movieRepository = ref.read(movieRepositoryProvider);
                       showSearch(
-                          context: context, delegate: SearchMovieDelegate());
+                        context: context,
+                        delegate: SearchMovieDelegate(
+                            searchMovie: movieRepository.searchMovies),
+                      );
                     },
                     child: const Icon(Icons.search))
               ],

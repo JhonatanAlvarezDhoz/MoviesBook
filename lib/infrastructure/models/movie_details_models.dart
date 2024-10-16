@@ -14,7 +14,7 @@ class MovieDbDetails {
   String originalTitle;
   String overview;
   double popularity;
-  String posterPath;
+  String? posterPath;
   List<ProductionCompany> productionCompanies;
   List<ProductionCountry> productionCountries;
   DateTime releaseDate;
@@ -72,13 +72,13 @@ class MovieDbDetails {
         genres: List<Genre>.from(json["genres"].map((x) => Genre.fromJson(x))),
         homepage: json["homepage"],
         id: json["id"],
-        imdbId: json["imdb_id"],
+        imdbId: json["imdb_id"] ?? "",
         originCountry: List<String>.from(json["origin_country"].map((x) => x)),
         originalLanguage: json["original_language"],
         originalTitle: json["original_title"],
         overview: json["overview"],
         popularity: json["popularity"]?.toDouble(),
-        posterPath: json["poster_path"],
+        posterPath: json["poster_path"] ?? "",
         productionCompanies: List<ProductionCompany>.from(
             json["production_companies"]
                 .map((x) => ProductionCompany.fromJson(x))),
@@ -154,8 +154,9 @@ class BelongsToCollection {
       BelongsToCollection(
         id: json["id"],
         name: json["name"],
-        posterPath: json["poster_path"],
-        backdropPath: json["backdrop_path"],
+        posterPath: json["poster_path"] ?? "",
+        backdropPath: json["backdrop_path"] ??
+            "https://asean.org/wp-content/uploads/2022/07/No-Image-Placeholder.svg.png",
       );
 
   Map<String, dynamic> toJson() => {

@@ -77,7 +77,7 @@ class _InfoMovie extends ConsumerWidget {
     final size = MediaQuery.of(context).size;
     final textStyle = Theme.of(context).textTheme;
 
-    final overView = Helper.splitOverView(text: movie.overview, limit: 320);
+    final overView = Helper.splitOverView(text: movie.overview, limit: 272);
 
     final isDivide = overView['isDivide'];
     final firstPart = overView['firstPart'];
@@ -123,11 +123,13 @@ class _InfoMovie extends ConsumerWidget {
                           style: textStyle.titleLarge,
                         ),
                         const SizedBox(height: 5),
-                        Text(
-                          textAlign: TextAlign.justify,
-                          firstPart,
-                          style: textStyle.bodySmall,
-                          maxLines: 10,
+                        SizedBox(
+                          child: Text(
+                            textAlign: TextAlign.justify,
+                            firstPart,
+                            style: textStyle.bodySmall,
+                            maxLines: 10,
+                          ),
                         ),
                       ],
                     ),
