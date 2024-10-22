@@ -14,14 +14,17 @@ class SearchMovieDelegate extends SearchDelegate {
   Timer? _debouceTimer;
 
   final SearchMoviesCallBack searchMovie;
+  List<Movie>? initialMovies;
 
   SearchMovieDelegate(
-      {super.searchFieldLabel,
-      super.searchFieldStyle,
-      super.searchFieldDecorationTheme,
-      super.keyboardType,
+      {
+      //   super.searchFieldLabel,
+      // super.searchFieldStyle,
+      // super.searchFieldDecorationTheme,
+      // super.keyboardType,
       super.textInputAction,
-      required this.searchMovie});
+      required this.searchMovie,
+      this.initialMovies});
 
   @override
   String get searchFieldLabel => "Buscar Pelicula";
@@ -35,6 +38,7 @@ class SearchMovieDelegate extends SearchDelegate {
         return;
       }
       final movies = await searchMovie(query: query);
+      initialMovies = movies;
       debounceMovies.add(movies);
     });
   }
@@ -72,13 +76,18 @@ class SearchMovieDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    return const Text("buildResults");
+    return buildResultAndSugestion();
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
     _onQueryChange(query);
+    return buildResultAndSugestion();
+  }
+
+  Widget buildResultAndSugestion() {
     return StreamBuilder(
+      initialData: initialMovies,
       stream: debounceMovies.stream,
       builder: (context, snapshot) {
         final movies = snapshot.data ?? [];
