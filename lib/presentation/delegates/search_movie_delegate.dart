@@ -115,7 +115,7 @@ class MovieSearchItem extends StatelessWidget {
     final textStyles = Theme.of(context).textTheme;
     final size = MediaQuery.of(context).size;
     return GestureDetector(
-      onTap: () => context.push('/movie/${movie.id}'),
+      onTap: () => context.push('/home/0/movie/${movie.id}'),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Row(
