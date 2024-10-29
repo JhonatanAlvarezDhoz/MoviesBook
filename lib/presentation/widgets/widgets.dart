@@ -1,3 +1,6 @@
+export 'package:trending_movies/presentation/widgets/movies/movie_masonry.dart';
+export 'package:trending_movies/presentation/widgets/movies/movie_poster_link.dart';
+
 export 'package:trending_movies/presentation/widgets/actors/flip_card.dart';
 
 export 'package:trending_movies/presentation/widgets/movies/listview_movies.dart';

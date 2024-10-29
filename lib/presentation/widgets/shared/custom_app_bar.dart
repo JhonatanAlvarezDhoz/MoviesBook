@@ -15,15 +15,16 @@ class CustomAppBar extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             width: constraints.maxWidth,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 SizedBox(
                   height: 50,
-                  width: 50,
+                  width: 40,
                   child: Image.asset("assets/images/logo.png"),
                 ),
                 SizedBox(
                     height: 20,
-                    width: 260,
+                    width: 270,
                     child: Image.asset("assets/images/title.png")),
                 const Spacer(),
                 GestureDetector(

@@ -55,6 +55,7 @@ class HomeViewState extends ConsumerState<HomeView> {
                 floating: true,
                 elevation: 1,
                 flexibleSpace: FlexibleSpaceBar(
+                  titlePadding: EdgeInsets.zero,
                   title: CustomAppBar(),
                 ),
               ),
@@ -66,7 +67,7 @@ class HomeViewState extends ConsumerState<HomeView> {
                       ListviewMovies(
                         movies: nowPlayingMovies,
                         title: "En cines",
-                        subTitle: "Lunes 20",
+                        subTitle: DateTime.now().toString().substring(0, 10),
                         loadNextPage: () => ref
                             .read(nowPlayingMoviesProvider.notifier)
                             .loadNextPage(),
