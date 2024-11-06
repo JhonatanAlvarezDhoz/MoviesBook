@@ -36,17 +36,17 @@ Base de datos en el dispositivo con iSAr: Gracias a iSAr, una base de datos no r
 #### Capturas de pantalla
 
 <p align="center">
-  <img src="assets/images/1.jpg" alt="Captura de Pantalla 1" width="20%" />
-  <img src="assets/images/2.jpg" alt="Captura de Pantalla 2" width="20%" />
-  <img src="assets/images/3.jpg" alt="Captura de Pantalla 3" width="20%" />
-  <img src="assets/images/4.jpg" alt="Captura de Pantalla 4" width="20%" />
+  <img src="assets/readme/1.jpg" alt="Captura de Pantalla 1" width="20%" />
+  <img src="assets/readme/2.jpg" alt="Captura de Pantalla 2" width="20%" />
+  <img src="assets/readme/3.jpg" alt="Captura de Pantalla 3" width="20%" />
+  <img src="assets/readme/4.jpg" alt="Captura de Pantalla 4" width="20%" />
 </p>
 <p align="center">
   
-  <img src="assets/images/5.jpg" alt="Captura de Pantalla 5" width="20%" />
-  <img src="assets/images/6.jpg" alt="Captura de Pantalla 6" width="20%" />
-  <img src="assets/images/7.jpg" alt="Captura de Pantalla 7" width="20%" />
-  <img src="assets/images/8.jpg" alt="Captura de Pantalla 8" width="20%" />
+  <img src="assets/readme/5.jpg" alt="Captura de Pantalla 5" width="20%" />
+  <img src="assets/readme/6.jpg" alt="Captura de Pantalla 6" width="20%" />
+  <img src="assets/readme/7.jpg" alt="Captura de Pantalla 7" width="20%" />
+  <img src="assets/readme/8.jpg" alt="Captura de Pantalla 8" width="20%" />
 </p>
 
 *Inicio, Buscar, Detalles, Favorito*
