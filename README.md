@@ -1,4 +1,4 @@
-# trending_movies
+# MoviesBook
 
 ## Getting Started
 
